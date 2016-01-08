@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 
-#define PATH "dictionary/dictionary.txt"
+#define PATH "Dictionary/dictionary.txt"
 
 #include "dictionary.h"
 
