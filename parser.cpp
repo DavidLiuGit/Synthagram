@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
+#include <vector>
 
 #include "dictionary.h"
 
@@ -25,6 +26,8 @@ void parser(){
         
         stringstream linestream( line );
         linestream >> word;
+        
+        word = scramble(word);          // alphabetically sort the string
     }
     
     delete ref;
@@ -35,4 +38,9 @@ string scramble (string word){
     string wurd = word;
     std::sort(wurd.begin(), wurd.end());
     return wurd;
+}
+
+// this function will scramble the user input, and then look it up in the hash table
+vector<string> lookUp (string word){
+    word = scramble(word);
 }
