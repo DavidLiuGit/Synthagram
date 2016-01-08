@@ -1,13 +1,16 @@
 #include <cstdlib>
 #include <string>
-#include <unordered_map>
 #include <iostream>
+
+//#include "parser.h"
 
 #define V1 1
 #define V2 0
 
 using namespace std;
 
+void help();
+void parser();
 
 // About synthagram
 void about(){
@@ -18,7 +21,10 @@ void about(){
 
 int main(int argc, char** argv) {
     about();
-
+    
+    //help();
+    parser();
+    
     return 0;
 }
 
