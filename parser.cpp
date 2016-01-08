@@ -1,11 +1,11 @@
-// parser
-
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
 #include <vector>
+
+#define PATH "dictionary/dictionary.txt"
 
 #include "dictionary.h"
 
@@ -22,7 +22,7 @@ void help(){
 void parser(){
     string word, line = "";
     
-    dictionary *ref = new dictionary();
+    dictionary *ref = new dictionary( (string) PATH );
     
     while ( !cin.eof() ){
         cout << "> ";
@@ -48,8 +48,6 @@ string scramble (string word){
 vector<string> lookUp (string word){
     vector<string> results;
     word = scramble(word);
-    
-    
     
     return results;
 }

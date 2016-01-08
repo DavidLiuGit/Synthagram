@@ -4,7 +4,7 @@ dictionary::dictionary() {
     // default constructor
 }
 
-dictionary::dictionary(ifstream& input){
+dictionary::dictionary(string inputPath){
     // overload constructor; initialize the reference map based on txt file
 }
 

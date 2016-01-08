@@ -14,7 +14,7 @@ class dictionary {
 public:
     // constructors & destructor
     dictionary();
-    dictionary(ifstream &input);
+    dictionary(string inputPath);
     virtual ~dictionary();
     
     // member functions
