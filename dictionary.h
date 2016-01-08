@@ -6,18 +6,24 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
 class dictionary {
 public:
-    //constructors
+    // constructors & destructor
     dictionary();
     dictionary(ifstream &input);
-    
     virtual ~dictionary();
+    
+    // member functions
+    vector<string> refLookUp (string letters);
+    void createRef (ifstream &input);
+    string sort (string);
+    
 private:
-    map <string, vector<string> > allWords;
+    map <string, vector<string> > allWords;     // the main reference hash table/map
     
 };
 
