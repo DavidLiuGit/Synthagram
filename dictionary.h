@@ -18,7 +18,7 @@ public:
     virtual ~dictionary();
     
     // member functions
-    vector<string> refLookUp (string letters);
+    vector<string>* refLookUp (string letters);
     void createRef (ifstream &input);
     string sort (string);
     
