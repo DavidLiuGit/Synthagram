@@ -12,7 +12,7 @@
 using namespace std;
 
 string scramble (string);
-vector<string> lookUp (string);
+vector<string>* lookUp (string, dictionary*);
 
 
 void help(){
@@ -31,7 +31,7 @@ void parser(){
         stringstream linestream( line );
         linestream >> word;
         
-        lookUp (word);
+        
     }
     
     delete ref;
@@ -45,9 +45,8 @@ string scramble (string word){
 }
 
 // this function will scramble the user input, and then look it up in the hash table
-vector<string> lookUp (string word){
-    vector<string> results;
+vector<string>* lookUp (string word, dictionary *ref){
     word = scramble(word);
     
-    return results;
+    return ref->refLookUp(word);
 }
