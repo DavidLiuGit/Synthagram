@@ -11,6 +11,7 @@
 
 using namespace std;
 
+void process(string, dictionary*);
 string scramble (string);
 vector<string>* lookUp (string, dictionary*);
 
@@ -29,8 +30,10 @@ void parser(){
         getline (cin, line);
         
         stringstream linestream( line );
+        
         linestream >> word;
         
+        lookUp ( word, ref );
         
     }
     
@@ -48,5 +51,15 @@ string scramble (string word){
 vector<string>* lookUp (string word, dictionary *ref){
     word = scramble(word);
     
-    return ref->refLookUp(word);
+    vector<string> *anagrams = ref->refLookUp( word );
+    if (anagrams){              // if NOT a nullptr (i.e. at least 1 anagram was found)
+        cout << anagrams->size() << " anagram(s) were found:" << endl;
+        for (int x = 0; x < anagrams->size(); x++){         // print out each anagram
+            cout << ' ' << anagrams->at(x) << endl;
+        }
+    } else {                    // if no anagram was found
+        cout << "No anagram was found in the dictionary for your input." << endl;
+    }
+    
+    return anagrams;
 }
