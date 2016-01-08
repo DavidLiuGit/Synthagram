@@ -1,26 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   dictionary.h
- * Author: liuge2
- *
- * Created on January 8, 2016, 3:31 AM
- */
-
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
+#include <string>
+#include <algorithm>
+#include <map>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
 class dictionary {
 public:
+    //constructors
     dictionary();
-    dictionary(const dictionary& orig);
+    dictionary(ifstream &input);
+    
     virtual ~dictionary();
 private:
-
+    map <string, vector<string> > allWords;
+    
 };
 
 #endif /* DICTIONARY_H */

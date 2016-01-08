@@ -1,9 +1,7 @@
 #include "dictionary.h"
 
 dictionary::dictionary() {
-}
-
-dictionary::dictionary(const dictionary& orig) {
+    // default constructor
 }
 
 dictionary::~dictionary() {
