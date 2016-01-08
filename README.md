@@ -6,6 +6,7 @@ No character can be omitted, and the anagram words must exist in the dictionary.
 
 
 Description of how it works as of version 1.1:
+
 An instance of a dictionary class is created, and will serve as the basis for all other anagrams that can be considered words.
 
 When the reference is created, it reads a text file containing valid dictionary words.  For each word:
