@@ -11,6 +11,10 @@
 
 using namespace std;
 
+string scramble (string);
+vector<string> lookUp (string);
+
+
 void help(){
     cout << "help" << endl;
 }
@@ -27,7 +31,7 @@ void parser(){
         stringstream linestream( line );
         linestream >> word;
         
-        word = scramble(word);          // alphabetically sort the string
+        
     }
     
     delete ref;
