@@ -16,7 +16,7 @@ void parser();
 void about(){
     cout << "Synthagram is a console application that finds anagrams based on user input." << endl;    
     cout << "Current version: " << (unsigned int)V1 << '.' << (unsigned int)V2 << endl;
-    cout << "This program uses C++2011" << endl << endl;
+    //cout << "This program uses C++2011" << endl << endl;
 }
 
 int main(int argc, char** argv) {
