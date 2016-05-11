@@ -27,18 +27,21 @@ void dictionary::createRef(ifstream& input){
     if (input.is_open()){               
         cout << "Dictionary successfully loaded." << endl;
         while ( getline (input, line) ){        // read the txt file line by line
+            // remove carriage return, if it is the last character in line
+            if (line.back() == '\r')
+                line.pop_back();
+            
             string scrambled = sort ( line );   // scramble the word
             
             if ( allWords.find( scrambled ) == allWords.end() ){        // if the scrambled word does NOT already exist in the reference map
-                vector<string> words;             // then create a vector of strings, capacity 1
+                vector<string> words;                   // then create a vector of strings, capacity 1
                 words.push_back( line );                // add the unscrambled word to the vector
                 allWords.insert( refPair (scrambled, words) );    // add to the ref. map: the scrambled string as the hash key, and the vector as the hash value
-                cout << "New word " << line << " added." << endl;
             } 
             else                                                    // if the scrambled word DOES already exist in the reference map
             {                                                
                 allWords.at(scrambled).push_back( line );           // then simply add the unscrambled word onto the vector
-                cout << line << " added, and an anagram for it was found." << endl;
+                //cout << line << " added, and an anagram for it was found." << endl;
             }
         }
         

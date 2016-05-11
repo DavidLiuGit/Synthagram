@@ -2,7 +2,8 @@
 #include <string>
 #include <iostream>
 
-//#include "parser.h"
+#define PATH "Dictionary/dictionary.txt"
+#include "dictionary.h"
 
 #define V1 1
 #define V2 1
@@ -10,7 +11,7 @@
 using namespace std;
 
 void help();
-void parser();
+void parser(dictionary *ref);
 
 // About synthagram
 void about(){
@@ -21,10 +22,13 @@ void about(){
 }
 
 int main(int argc, char** argv) {
+    if (argc == 2)
     about();
     
-    //help();
-    parser();
+    dictionary *ref = new dictionary( (string) PATH );
+    parser(ref);
+    
+    delete ref;
     
     return 0;
 }

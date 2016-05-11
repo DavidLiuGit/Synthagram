@@ -4,9 +4,6 @@
 #include <iomanip>
 #include <sstream>
 #include <vector>
-
-#define PATH "Dictionary/dictionary.txt"
-
 #include "dictionary.h"
 
 using namespace std;
@@ -20,11 +17,10 @@ void help(){
     cout << "help" << endl;
 }
 
-void parser(){
+void parser(dictionary *ref){
     string word, line = "";
     
-    dictionary *ref = new dictionary( (string) PATH );
-    
+    // run this loop until the user enters EOF (ctrl+D)
     while ( !cin.eof() ){
         cout << "> ";
         getline (cin, line);
@@ -37,7 +33,6 @@ void parser(){
         
     }
     
-    delete ref;
 }
 
 // scrambles the letters in the word, and returns the letters in sorted alphabetical order
